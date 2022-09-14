@@ -119,11 +119,11 @@
             <div class="row mb-2">
               <div class="col-12 col-lg-8"><img class="rounded img captains-pic" src="./assets/teamcaptains.jpeg" />
               </div>
-              <div class="col-12 col-lg-4 card">
-                <img src="./assets/valkyrie.jpg" class="card-img-top" alt="Valkyrie pic." />
+              <div class="col-12 col-lg-4">
+                <img src="./assets/valkyrie.jpg" class="img-fluid rounded" alt="Valkyrie pic." />
                 <div class="card-body">
-                  <h5 class="card-title">Coach Valkyrie</h5>
-                  <p class="card-text">
+                  <h4>Coach Valkyrie</h4>
+                  <p class="text-white">
                     Coach Valk has been in the field since day 1. She is an
                     expert at what he does.
                   </p>
@@ -250,16 +250,17 @@
   </div>
   </div>
 </footer>
-<div aria-live="polite" aria-atomic="true" class="toast-container" style="position: absolute; top: 10px;">
-  <div id=" deleteToast" class="toast">
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="deleteToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
-      <strong class="mr-auto">Deleted</strong>
+      <img  width="50" src="./assets/apexlogo.webp" class="rounded me-2" alt="logo">
+      Deleted&nbsp;<strong id="team-to-delete" class="me-auto"></strong>
       <small>Just now</small>
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast-body">Team <span id="team-to-delete"></span> deleted!</div>
+    <div class="toast-body">
+      The <strong id="team-to-delete"></strong> was removed
+    </div>
   </div>
 </div>
 

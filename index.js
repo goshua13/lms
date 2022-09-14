@@ -1,3 +1,4 @@
+"use strict";
 const teams = {
   byId: {
     team1: {
@@ -52,7 +53,9 @@ $(document).ready(function () {
   teams.allIds.forEach((id, i) => {
     const team = teams.byId[id];
     tableBody.append(
-      `<tr id="team-id-${id}" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+      `<tr id="team-id-${id}" data-toggle="tooltip" data-bs-delay='{"show":"2000", "hide":"3000"}' title="Information about ${
+        team.name
+      }, coached by ${team.coach}">
             <td>${i + 1}</td>
             <td>${team.name}</td>
             <td class="text-capitalize">${team.coach}</td>
@@ -84,5 +87,8 @@ $(document).ready(function () {
 function deleteTeam() {
   $(`#team-id-${currentTeamId}`).remove();
   $("#deleteToast #team-to-delete").text(teams.byId[currentTeamId].name);
-  $("#deleteToast").toast("show");
+  const toastDelete = document.getElementById("deleteToast");
+  const toast = new bootstrap.Toast(toastDelete);
+
+  toast.show();
 }
